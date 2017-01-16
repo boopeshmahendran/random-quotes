@@ -8,12 +8,9 @@ import './App.css';
 class App extends Component {
   constructor(props) {
       super(props);
-      this.state = {
-          quote: {
-              quote: "hello how are you",
-              author: "boopesh"
-          }
-      };
+  }
+  componentWillMount() {
+      this.changeQuote();
   }
   changeQuote() {
       var randQuote = quotes[Math.floor(Math.random() * quotes.length)];
