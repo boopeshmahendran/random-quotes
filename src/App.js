@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import QuoteContainer from './components/QuoteContainer';
 import ChangeQuote from './components/ChangeQuote';
-import $ from 'jquery';
 import {quotes} from './quotes';
 import './App.css';
 
