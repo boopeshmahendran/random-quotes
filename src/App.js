@@ -10,7 +10,6 @@ class App extends Component {
   }
   changeQuote() {
       var randQuote = quotes[Math.floor(Math.random() * quotes.length)];
-      console.log(randQuote);
       this.setState({
           quote: randQuote
       });
