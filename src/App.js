@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import QuoteContainer from './components/QuoteContainer';
 import ChangeQuote from './components/ChangeQuote';
 import $ from 'jquery';
+import {quotes} from './quotes';
+import './App.css';
 
 class App extends Component {
   constructor(props) {
@@ -11,30 +13,18 @@ class App extends Component {
               quote: "hello how are you",
               author: "boopesh"
           }
-      }
+      };
   }
   changeQuote() {
-      var self = this;
-      $.ajax({
-          url: 'http://quotesondesign.com/wp-json/posts',
-          data: {
-              'filter[orderby]': 'rand',
-              'filter[posts_per_page]': 1
-          },
-          success: function(data) {
-              self.setState({
-                      quote: {
-                          quote: data[0].content,
-                          author: data[0].title,
-                      }
-              });
-              console.log(data[0]);
-          }
+      var randQuote = quotes[Math.floor(Math.random() * quotes.length)];
+      console.log(randQuote);
+      this.setState({
+          quote: randQuote
       });
   }
   render() {
     return (
-      <div>
+      <div className='App'>
         <QuoteContainer quote={this.state.quote}/>
         <ChangeQuote changeQuote={this.changeQuote.bind(this)}/>
       </div>
