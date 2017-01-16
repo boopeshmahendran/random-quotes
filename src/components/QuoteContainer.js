@@ -4,8 +4,8 @@ class QuoteContainer extends Component {
     render() {
         return (
             <div>
-                <h3>{this.props.quote.quote}</h3>
-                <p>{this.props.quote.author}</p>
+                <h2 style={{textTransform: 'uppercase'}}>{this.props.quote.quote}</h2>
+                <p style={{textAlign: 'right', textTransform: 'capitalize'}}> - {this.props.quote.author}</p>
             </div>
         );
     }
