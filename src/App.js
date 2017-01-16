@@ -6,9 +6,6 @@ import {quotes} from './quotes';
 import './App.css';
 
 class App extends Component {
-  constructor(props) {
-      super(props);
-  }
   componentWillMount() {
       this.changeQuote();
   }
